@@ -1,0 +1,31 @@
+print("Building a multiple choice quiz")
+
+class Question:
+    def __init__(self, prompt, answer):
+        self.prompt = prompt
+        self.answer = answer
+
+question_prompts = [
+    "What country do you live in?\n(a) United Kingdom\n(b) Ukraine\n(c) United States\n(d) Africa\n\n",
+    "What color is NOT in the US flag?\n(a) Red\n(b) Blue\n(c) Green\n(d) White\n\n",
+    "What animal symbolizes freedom in the US?\n(a) Bald Eagle\n(b) Polar Bear\n(c) Great White Shark\n(d) Lion\n\n",
+    "Who was the first President of the United States?\n(a) Abraham Lincoln\n(b) Thomas Jefferson\n"
+    "(c) George Bush\n(d) George Washington\n\n",
+]
+
+questions = [
+    Question(question_prompts[0], "c"),
+    Question(question_prompts[1], "c"),
+    Question(question_prompts[2], "a"),
+    Question(question_prompts[3], "d")
+]
+
+def run_test(questions):
+    score = 0
+    for question in questions:
+        answer = input(question.prompt)
+        if answer == question.answer:
+            score += 1
+    print("You got " + str(score) + "/" + str(len(questions)) + "correct")
+
+run_test(questions)
